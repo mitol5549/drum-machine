@@ -1,0 +1,94 @@
+.bank-name__drums {
+  grid-row: 4 / 5;
+  grid-column: 5 / 6;
+  justify-self: end;
+
+  font-size: 2.5rem;
+  color: #243b67;
+  font-family: sans-serif;
+}
+
+.bank-name__chords {
+  grid-row: 4 / 5;
+  grid-column: 7 / 8;
+  justify-self: start;
+
+  font-size: 2.5rem;
+  color: #243b67;
+  font-family: sans-serif;
+}
+
+.bank-changer {
+  grid-row: 4 / 5;
+  grid-column: 6 / 7;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 6rem;
+  height: 3rem;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #243b67;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 2.2rem;
+  width: 2.6rem;
+  left: 0.4rem;
+  bottom: 0.4rem;
+  background-color: #6e5dcf;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #243b67;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #243b67;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(2.6rem);
+  -ms-transform: translateX(2.6rem);
+  transform: translateX(2.6rem);
+}
+
+@media (max-width: 600px) {
+  .bank-name__drums {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    align-self: end;
+  }
+
+  .bank-name__chords {
+    grid-row: 2 / 3;
+    grid-column: 4 / 5;
+    align-self: end;
+  }
+
+  .bank-changer {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    align-self: end;
+    justify-self: center;
+  }
+}
